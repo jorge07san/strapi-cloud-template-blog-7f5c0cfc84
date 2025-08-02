@@ -1,14 +1,39 @@
-import { prefixPluginTranslations } from '@strapi/helper-plugin';
-import pluginPkg from '../../package.json';
-
-const pluginId = pluginPkg.name.replace(/^@strapi\/plugin-/i, '');
-
-const plugin = {
-  id: pluginId,
-  initializer: (store) => {
-    store.dispatch('plugin::i18n.i18n.setLocale', 'pt-BR'); // Defina o idioma padrão aqui
-  },
-  // ... outras configurações do plugin, se houver
+const config = {
+  locales: [
+    // 'ar',
+    // 'fr',
+    // 'cs',
+    // 'de',
+    // 'dk',
+    // 'es',
+    // 'he',
+    // 'id',
+    // 'it',
+    // 'ja',
+    // 'ko',
+    // 'ms',
+    // 'nl',
+    // 'no',
+    // 'pl',
+     'pt-BR',
+    // 'pt',
+    // 'ru',
+    // 'sk',
+    // 'sv',
+    // 'th',
+    // 'tr',
+    // 'uk',
+    // 'vi',
+    // 'zh-Hans',
+    // 'zh',
+  ],
 };
 
-export default plugin;
+const bootstrap = (app) => {
+  console.log(app);
+};
+
+export default {
+  config,
+  bootstrap,
+};
